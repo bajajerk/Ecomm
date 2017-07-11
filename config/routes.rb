@@ -3,9 +3,10 @@ Rails.application.routes.draw do
 
   # resources :products
   # resources :products
-  resources :products, only: [:create, :destroy]
+  resources :products, only: [:create, :destroy, :edit]
   get 'home/index'
   get '/seller/index'
+  get '/seller/addNewProduct'
 
   devise_for :admins
   devise_for :sellers

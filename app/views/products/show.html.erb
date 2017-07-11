@@ -1,34 +1,29 @@
-<p id="notice"><%= notice %></p>
+<%- model_class = Product -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @product.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:description) %>:</strong></dt>
+  <dd><%= @product.description %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:rating) %>:</strong></dt>
+  <dd><%= @product.rating %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:price) %>:</strong></dt>
+  <dd><%= @product.price %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:Seller_id) %>:</strong></dt>
+  <dd><%= @product.Seller_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:instock) %>:</strong></dt>
+  <dd><%= @product.instock %></dd>
+</dl>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Rating:</strong>
-  <%= @product.rating %>
-</p>
-
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-
-<p>
-  <strong>Seller:</strong>
-  <%= @product.Seller %>
-</p>
-
-<p>
-  <strong>Instock:</strong>
-  <%= @product.instock %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              products_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_product_path(@product), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              product_path(@product),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

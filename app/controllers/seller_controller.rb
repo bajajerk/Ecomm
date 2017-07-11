@@ -4,4 +4,8 @@ class SellerController < ApplicationController
   	@products=Product.all
   	@product= Product.new
   end
+  def productslisting
+  		@products=Product.all
+  end
+
 end

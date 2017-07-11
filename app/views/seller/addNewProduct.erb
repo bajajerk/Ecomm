@@ -1,6 +1,21 @@
-<%= form_for @product, :html => { :class => "form-horizontal product" } do |f| %>
+<!-- 
+<%= form_for @product do |p| %>
 
-  <% if @product.errors.any? %>
+<%= p.label :Name %> <br>
+
+<%= p.text_area :name %>  <br>
+
+<div class="actions">
+<%= p.submit   %>
+</div>
+
+<% end %>
+ -->
+
+
+
+ <%= form_for(@product) do |f| %>
+<% if @product.errors.any? %>
     <div id="error_expl" class="panel panel-danger">
       <div class="panel-heading">
         <h3 class="panel-title"><%= pluralize(@product.errors.count, "error") %> prohibited this product from being saved:</h3>
@@ -67,3 +82,10 @@
   </div>
 
 <% end %>
+
+<% @products.each do |product| %>
+<%=product.name %>
+
+<% end %>
+
+
