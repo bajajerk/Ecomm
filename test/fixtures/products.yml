@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  description: MyString
+  rating: 1.5
+  price: 1
+  Seller_id: 
+  instock: false
+
+two:
+  name: MyText
+  description: MyString
+  rating: 1.5
+  price: 1
+  Seller_id: 
+  instock: false

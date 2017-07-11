@@ -1,0 +1,47 @@
+<!-- customers ka index -->
+<header>
+
+<div class="logo">
+
+</div>
+
+
+<nav>
+
+<ul>
+<li> My ecommerce  </li>
+<li>  <%= link_to "Sign Out",destroy_customer_session_path,method: :delete %></li>
+</ul>
+</nav>
+
+
+
+h1>Listing Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Rating</th>
+      <th>Price</th>
+      <th>Seller</th>
+      <th>Instock</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product.name %></td>
+        <td><%= product.description %></td>
+        <td><%= product.rating %></td>
+        <td><%= product.price %></td>
+        <td><%= product.Seller.email %></td>
+        <td><%= product.instock %></td>
+ 
+      </tr>
+    <% end %>
+  </tbody>
+</table>
