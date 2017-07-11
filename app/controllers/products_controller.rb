@@ -30,10 +30,10 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to '/products/index', notice: 'Product was successfully created.' }
+        format.html { redirect_to '/seller/index', notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
       else
-        format.html { render '/products/index'}
+        format.html { render '/seller/index'}
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   # resources :products
   # resources :products
-  resources :products 
+  resources :products, only: [:create, :destroy]
   get 'home/index'
   get '/seller/index'
 
