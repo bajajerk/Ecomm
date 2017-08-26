@@ -1,18 +1,4 @@
-<!-- 
-<%= form_for @product do |p| %>
-
-<%= p.label :Name %> <br>
-
-<%= p.text_area :name %>  <br>
-
-<div class="actions">
-<%= p.submit   %>
-</div>
-
-<% end %>
- -->
-
-
+<% if current_seller.isverified %>
 
  <%= form_for(@product) do |f| %>
 <% if @product.errors.any? %>
@@ -133,4 +119,8 @@
     <% end %>
   </tbody>
 </table>
-
+<% else %>
+<form action="isverify" method="post">
+  <input type="submit" name="isverify" value="isverify">
+</form>
+ <% end %>

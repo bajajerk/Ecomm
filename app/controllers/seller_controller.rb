@@ -3,9 +3,12 @@ class SellerController < ApplicationController
   def index
   	@products=Product.all
   	@product= Product.new
+  	
+
   end
   def productslisting
   		@products=Product.all
   end
+  def isverify
 
 end
